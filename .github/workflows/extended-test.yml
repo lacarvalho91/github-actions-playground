@@ -4,8 +4,6 @@ on:
   schedule:
     - cron: '* * * * *'
 
-  workflow_dispatch:
-
 jobs:
   extended-test:
     runs-on: ubuntu-latest
