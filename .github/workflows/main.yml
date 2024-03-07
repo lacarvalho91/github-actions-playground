@@ -14,14 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
-        run: sleep 30
+        run: sleep 5
 
   integrated-test:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Deploy and run integrated test
-        run: sleep 30
+        run: sleep 5
 
   stubbed-nft:
     needs: integrated-test
