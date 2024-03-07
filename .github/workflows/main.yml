@@ -17,12 +17,14 @@ jobs:
         run: sleep 30
 
   integrated-test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Deploy and run integrated test
         run: sleep 30
 
   stubbed-nft:
+    needs: integrated-test
     runs-on: ubuntu-latest
     steps:
       - name: Turnstyle
