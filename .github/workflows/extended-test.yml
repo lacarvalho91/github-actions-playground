@@ -1,8 +1,9 @@
 name: Extended Test
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '* * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   extended-test:
