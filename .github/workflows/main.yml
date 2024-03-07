@@ -2,8 +2,9 @@ name: Main
 
 on:
   workflow_call:
-    inputs:
+    secrets:
       repo-token:
+        required: true
   workflow_dispatch:
 
 jobs:
@@ -29,6 +30,6 @@ jobs:
         uses: ben-z/gh-action-mutex@v1.0.0-alpha.9
         with:
           branch: nft-mutex
-          repo-token: ${{ inputs.repo-token }}
+          repo-token: ${{ secrets.repo-token }}
       - name: Deploy and run stubbed NFT
         run: sleep 30
