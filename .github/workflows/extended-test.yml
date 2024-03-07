@@ -1,0 +1,14 @@
+name: Extended Test
+
+on:
+  schedule:
+    - cron: '* * * * *'
+
+  workflow_dispatch:
+
+jobs:
+  extended-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy and run integrated test
+        run: sleep 30

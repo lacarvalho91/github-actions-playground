@@ -1,0 +1,29 @@
+name: Main
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: sleep 30
+
+  integrated-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy and run integrated test
+        run: sleep 30
+
+  stubbed-nft:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy and run stubbed NFT
+        run: sleep 30
