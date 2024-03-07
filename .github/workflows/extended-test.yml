@@ -2,8 +2,10 @@ name: Extended Test
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '*/5 * * * *'
+  workflow_call:
+    secrets:
+      repo-token:
+        required: true
 
 jobs:
   extended-test:

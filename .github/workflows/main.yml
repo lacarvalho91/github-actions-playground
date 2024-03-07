@@ -12,15 +12,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Turnstyle
+        uses: softprops/turnstyle@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.repo-token }}
       - name: Run a one-line script
-        run: sleep 5
+        run: sleep 15
 
   integrated-test:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Turnstyle
+        uses: softprops/turnstyle@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.repo-token }}
       - name: Deploy and run integrated test
-        run: sleep 5
+        run: sleep 15
 
   stubbed-nft:
     needs: integrated-test
